@@ -32,7 +32,9 @@ $window->signal_connect(destroy => sub { Gtk2->main_quit; });
 
 # Sets the border width of the window.
 $window->set_border_width(10);
-$window->set_size_request(300, 300);
+
+# window size
+$window->set_size_request(300, 400);
 
 # Creates a new button with a label "Hello World".
 my $button = Gtk2::Button->new("Hello World");
@@ -41,6 +43,7 @@ my $button = Gtk2::Button->new("Hello World");
 # hello() with the window reference passed to it.The hello() function is
 # defined above.
 $button->signal_connect(clicked => \&hello, $window);
+$button->set_size_request(100, 30);
 
 # This packs the button into the window (a gtk container).
 $window->add($button);
