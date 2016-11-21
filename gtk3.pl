@@ -34,19 +34,19 @@ $window->signal_connect(delete_event => \&delete_event);
 # Sets the border width of the window.
 $window->set_border_width(10);
 # window size
-$window->set_size_request(300, 100);
+$window->set_size_request(300, 140);
 
 # We create a box to pack widgets into.  This is described in detail
 # in the "packing" section. The box is not really visible, it
 # is just used as a tool to arrange widgets.
 my $box1 = Gtk2::VBox->new(FALSE, 0);
-my $box2 = Gtk2::HBox->new(FALSE, 0);
-my $box3 = Gtk2::HBox->new(FALSE, 0);
+my $box2 = Gtk2::HBox->new(FALSE, 10);
+my $box3 = Gtk2::HBox->new(FALSE, 10);
 
 # Put the box into the main window.
 $window->add($box1);
-$box1->pack_start($box2, TRUE, TRUE, 0);
-$box1->pack_start($box3, TRUE, TRUE, 0);
+$box1->pack_start($box2, TRUE, TRUE, 10);
+$box1->pack_start($box3, TRUE, TRUE, 10);
 
 # Creates a new button with the label "Button 1".
 my $button = Gtk2::Button->new("Button 1");
